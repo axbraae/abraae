@@ -1,27 +1,29 @@
 ---
-bio: My research interests include distributed robotics, mobile computing and programmable
-  matter.
+bio: 
 education:
   courses:
-  - course: PhD in Artificial Intelligence
-    institution: Stanford University
-    year: 2012
-  - course: MEng in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2009
-  - course: BSc in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2008
-email: ""
+  - course: Professional Data Analysis
+    institution: CodeClan
+    year: 2021
+  - course: PhD in Clinical Chemistry
+    institution: University of Nottingham
+    year: 2016
+  - course: MSc in Molecular Genetics and Diagnostics
+    institution: University of Nottingham
+    year: 2011
+  - course: BSc in Genetics and Zoology
+    institution: University of Cape Town
+    year: 2007
+email: anne.braae@gmail.com
 highlight_name: false
 interests:
-- Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
+- Data analysis
+- Data visualization
+- Data communication
 organizations:
-- name: Stanford University
-  url: https://www.stanford.edu/
-role: Professor of Artificial Intelligence
+- name: CodeClan
+  url: https:/codeclan.com/
+role: Data Analysis trainee
 social:
 - icon: envelope
   icon_pack: fas
@@ -31,22 +33,25 @@ social:
   icon: twitter
   icon_pack: fab
   label: Follow me on Twitter
-  link: https://twitter.com/GeorgeCushen
-- icon: graduation-cap
-  icon_pack: fas
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+  link: https://twitter.com/_abraae
+#- icon: graduation-cap
+  #icon_pack: fas
+  #link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
+  link: https://github.com/axbraae
 - icon: linkedin
   icon_pack: fab
-  link: https://www.linkedin.com/
+  link: https://www.linkedin.com/in/axbraae-142/
 superuser: true
-title: Nelson Bighetti
+title: Anne Braae
+
+############# add the below to the end of the text to add a link to a CV.
+#{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
 ---
 
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+I am a former academic molecular geneticist with five years experience managing projects in the biotech industry. Currently retraining in data analysis after developing a love of visualising and communicating data. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+I enjoy using R and python to bring data to life in a way that allows the audience to draw their own conclusions.
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+

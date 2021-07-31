@@ -4,7 +4,7 @@ theme: "starter-hugo-academic"
 # Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
-title: Anne Braae # Website name
+title: AB # Website name
 baseurl: 'https://abraae.netlify.app/' # Website URL
 copyright: '© 2021 Anne Braae' # Footer text, e.g. '© {year} Me'
 
@@ -36,7 +36,7 @@ paginate: 10
 enableEmoji: true
 enableRobotsTXT: true
 footnotereturnlinkcontents: <sup>^</sup>
-ignoreFiles: [\.ipynb$, .ipynb_checkpoints$, \.Rmd$, \.Rmarkdown$, _cache$]
+ignoreFiles: [\.ipynb$, .ipynb_checkpoints$, "\\.knit\\.md$", "\\.utf8\\.md$", \.Rmd$, \.Rmarkdown$, _cache$, ]
 permalinks:
   event: '/talk/:slug/'
   authors: '/author/:slug/'
@@ -52,7 +52,7 @@ markup:
   goldmark:
     renderer:
       unsafe: true
-  highlight:
+  highlight: 
     codeFences: false
   tableOfContents:
     startLevel: 2

@@ -7,7 +7,7 @@ widget: featurette
 headless: true
 
 # Order that this section appears on the page.
-weight: 30
+weight: 90
 
 title: Skills
 subtitle:
@@ -20,14 +20,14 @@ feature:
   icon: r-project
   icon_pack: fab
   name: R
+- description: 10%
+  icon: python
+  icon_pack: fab
+  name: Python
 - description: 100%
   icon: chart-line
   icon_pack: fas
   name: Statistics
-- description: 10%
-  icon: camera-retro
-  icon_pack: fas
-  name: Photography
 
 # Uncomment to use emoji icons.
 #- icon = ":smile:"

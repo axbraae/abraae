@@ -1,0 +1,33 @@
+# Theme metadata
+name = "anne theme"
+
+# Is theme light or dark?
+light = true
+
+# Primary
+primary = "#178290"
+primary_light = "#FFF"
+primary_dark = "#494E5F"
+
+# Menu
+menu_primary = "#FFF"
+menu_text = "#494E5F"
+menu_text_active = "#178290"
+menu_title = "#494E5F"
+
+# Home sections
+#changes colours of segments as you move through them
+home_section_odd = "#B9D9DD"
+home_section_even = "#FFF"
+
+[dark]
+#links under the text
+  link = "#178290"
+  link_hover = "#178290"
+
+#menu settings
+  menu_primary = "#494E5F"
+  menu_text_active = "#178290"
+
+#home sections  
+  home_section_odd = "#494E5F"

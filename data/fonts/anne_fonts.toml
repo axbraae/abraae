@@ -1,0 +1,14 @@
+
+# Font style metadata
+name = "Minimal"
+
+# Optional Google font URL
+google_fonts = "family=Montserrat:wght@400;700&family=Libre+Baskerville&family=IBM+Plex+Mono:wght@300"
+
+# Font families
+heading_font = "Libre Baskerville"
+body_font = "Montserrat"
+nav_font = "Montserrat"
+mono_font = "IBM Plex Mono"
+
+#~/Documents/GitHub/NetlifyBlog/abraae/data/fonts/anne_fonts_delete_also.toml
