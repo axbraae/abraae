@@ -9,7 +9,7 @@ headless: true
 # Order that this section appears on the page.
 weight: 65
 
-title: Projects
+title: Portfolio
 subtitle: ''
 
 content:
@@ -27,10 +27,12 @@ content:
   filter_button:
   - name: All
     tag: '*'
-  - name: Deep Learning
-    tag: Deep Learning
-  - name: Other
-    tag: Demo
+  - name: Exploratory Data Analysis
+    tag: exploratory data analysis
+  - name: Data Wrangling
+    tag: data wrangling
+  - name: R
+    tag: R
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
