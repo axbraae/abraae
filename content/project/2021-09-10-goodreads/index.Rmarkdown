@@ -1,0 +1,180 @@
+---
+title: goodreads
+author: Anne Braae
+date: '2021-09-10'
+slug: goodreads
+categories: []
+tags: 
+- data wrangling
+- exploratory data analysis
+- R
+subtitle: ''
+summary: 'Data cleaning and initial exploratory data analysis of goodreads data.'
+authors: []
+lastmod: '2021-09-10T16:39:42+01:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+links:
+- icon: github
+  icon_pack: fab
+  name: Code
+  url: https://github.com/axbraae/data_cleaning_and_wrangling
+projects: []
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This is the very first homework assignment from my CodeClan course. Included here as I love books! Also because the clean up was more tricky than originally intended.
+
+# Data cleaning
+
+* Initially reading in the data generated a parsing error due to mislabeled quotes
+      * This was fixed by including `quote = ""` in the `read_csv()``
+* 12 parsing errors remained in the data 
+    - Investigating with `problems()` revealed four rows with data that has skipped a column because of an extra comma in the authors column 
+    - These commas were manually removed
+    - The `.csv` was resaved as `books_edit.csv`
+* Missing pages were recoded as missing (`NA`) if page number was zero
+* Average ratings were recoded as `NA` if average_rating = 0 and ratings_count > 0 
+    (you can't have an average rating of nothing if you have had a rating count)
+* Ratings count were recoded as `NA` if average_rating > 0 and ratings_count = 0
+    (you can't have a rating count of nothing if there is an average rating score)
+
+```{r, message = FALSE, warning = FALSE}
+library(tidyverse)
+library(here)
+```
+
+```{r, warning = FALSE}
+books_clean <- read_csv(here("./content/project/2021-09-10-goodreads/clean_data/books_clean.csv"))
+```
+
+## Looking at the authors
+  
+#### Questions I want to answer:
+
+* How many different authors are there? 
+* Who are the top ten most rated authors (based on rating count)?
+* Who are the ten authors with the longest books?
+      
+```{r}
+#count all the unique authors
+books_clean %>%
+  distinct(authors) %>% 
+  count()
+```
+<br />
+There are 6643 different authors listed. However, I note some authors may be listed more than once if they are coauthors. 
+
+Let's look at the top ten authors based on total number of reviews.
+
+```{r}
+author_subset <- books_clean %>% 
+  select(authors, title, ratings_count, num_pages)
+
+reviewed_top_ten <- author_subset %>% 
+  slice_max(ratings_count, n = 10)
+reviewed_top_ten
+```
+<br />
+
+Looks like Stephenie Meyer with the first Twilight book has received the most ratings on Goodreads! J.K. Rowling also features several times in the top ten most rated authors.
+
+Now I will have a look at the authors with the longest books.
+
+```{r}
+longest_top_ten <- author_subset %>% 
+  slice_max(num_pages, n = 10)
+longest_top_ten
+```
+
+<br />
+
+Ah, this was a bit of a trick question as the books listed with the highest page numbers are mostly box sets! Interestingly, two J.K. Rowling box sets feature in this list.
+
+<br />
+
+## Looking at the languages
+
+I would like to have a look at the different languages of books in this dataset.
+
+#### Questions I want to answer:
+
+* How many languages are there?
+* How many text reviews do books written in English have?
+* How many text reviews do books written in non-English have?
+* Is this count similar for the overall ratings received for English and non-English books? 
+* Who are the top ten publishers of English books?
+* Who are the top ten publishers of non-English books?
+  
+```{r}
+#counting how many languages there are and arranging them alphabetically
+books_clean %>% 
+  distinct(language_code) %>%
+  arrange(language_code)
+```
+
+<br />
+
+There are 27 different languages in the books dataset. It looks like English is coded four times: eng (which is not a localisation language code), en-US, en-GB and en-CA. (Additional note: enm is middle english, so I will not include this as an English book).
+
+Let's find out what the total text_reviews_count and ratings_count is in all four English groups compared to all other languages.
+
+```{r}
+#subset the dataset to answer the questions on English books
+#add a column, english, set to TRUE if the language is English
+
+language_subset <- books_clean %>% 
+  select(language_code, publisher, ratings_count, text_reviews_count) %>% 
+  mutate(english = case_when(
+      language_code %in% c("eng", "en-GB", "en-CA", "en-US") ~ TRUE,
+      TRUE ~ FALSE)
+        )
+
+#generate a summary table counting the total number of text reviews and ratings counts for English and non-English books
+
+language_subset %>% 
+  group_by(english) %>% 
+  summarise(
+    sum(text_reviews_count),
+    sum(ratings_count, na.rm = TRUE))
+```
+
+<br />
+
+Unsurprisingly perhaps, there are far more text reviews for books written in English (eng, en-GB, en-US and en-CA) than in all other languages combined (5997392 compared to 31823). If we put it as a percentage, 99.47% of the text reviews in this Goodreads dataset are written for English books, and only 0.53% of the text reviews are in another language.
+
+This is also seen when looking at the total for all ratings count (198017611 ratings for English books compared to 1560813, or 78.2% of ratings compared to 21.8%).
+
+Let's look at the publishers with the most English titles and the publishers with the most non-English titles.
+
+```{r}
+publisher_subset <- language_subset %>% 
+  group_by(publisher) %>% 
+  mutate(non_english = !english) %>% 
+  summarise(
+    tot_eng = sum(english), 
+    tot_non_eng = sum(non_english)
+  )
+publisher_subset
+
+#select publishers with the most books in English
+top_eng_publishers <- publisher_subset %>% 
+  slice_max(tot_eng, n = 10)
+top_eng_publishers
+
+#Select publishers with the most books in non-English
+top_non_eng_publishers <- publisher_subset %>% 
+  slice_max(tot_non_eng, n = 10)
+top_non_eng_publishers
+```
+
+<br />
+
+The top ten publishers with the most English titles are very different from the top ten publishers with the most non-English titles! Interestingly in both groups there are some book titles in other languages. The top ten publishers with non-English titles contains 11 publishers. This is because there are several publishers with the same total count of non-English books.
