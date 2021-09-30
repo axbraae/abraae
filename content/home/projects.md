@@ -29,14 +29,15 @@ content:
     tag: '*'
   - name: Exploratory Data Analysis
     tag: exploratory data analysis
-  - name: Data Wrangling
-    tag: data wrangling
+  - name: Machine Learning
+    tag: machine learning
   - name: Python
     tag: Python
   - name: R
     tag: R
-  - name: Machine Learning
-    tag: machine learning
+#  - name: Data Wrangling
+#    tag: data wrangling
+
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
