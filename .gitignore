@@ -6,3 +6,6 @@
 Thumbs.db
 /public/
 /resources/
+content/project/2021-09-30-flight-delays/data/clean_data/ewr_flights.csv
+content/project/2021-09-30-flight-delays/data/clean_data/jfk_flights.csv
+content/project/2021-09-30-flight-delays/data/clean_data/lga_flights.csv
