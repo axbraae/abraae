@@ -2,8 +2,8 @@
 bio: 
 education:
   courses:
-  - course: Professional Data Analysis
-    institution: CodeClan
+  - course: PDA Data Science
+    institution: CodeClan & SQA
     year: 2021
   - course: PhD in Clinical Chemistry
     institution: University of Nottingham
@@ -21,9 +21,9 @@ interests:
 - Data visualization
 - Data communication
 organizations:
-- name: CodeClan
-  url: https:/codeclan.com/
-role: Data Analysis trainee
+- name: 
+  url: 
+role: Freelance Data Scientist
 social:
 - icon: envelope
   icon_pack: fas
@@ -52,6 +52,6 @@ title: Anne Braae
 
 I am a former academic molecular geneticist with five years experience managing projects in the biotech industry. Currently retraining in data analysis after developing a love of visualising and communicating data. 
 
-I enjoy using R and python to bring data to life in a way that allows the audience to draw their own conclusions.
+I enjoy using Python and R to bring data to life in a way that allows the audience to draw their own conclusions.
 
 
