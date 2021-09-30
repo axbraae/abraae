@@ -33,7 +33,7 @@ This is the very first homework assignment from my CodeClan course. Included her
 # Data cleaning
 
 * Initially reading in the data generated a parsing error due to mislabeled quotes
-      * This was fixed by including `quote = ""` in the `read_csv()`
+    - This was fixed by including `quote = ""` in the `read_csv()`
 * 12 parsing errors remained in the data 
     - Investigating with `problems()` revealed four rows with data that has skipped a column because of an extra comma in the authors column 
     - These commas were manually removed
