@@ -28,14 +28,14 @@ projects: []
 
 Processed and balanced data obtained from [Kaggle](https://www.kaggle.com/vinesmsuic/star-categorization-giants-and-dwarfs)
 
-I will used this data set to test out the XGBoost classifier. Information on the dataset is as follows:
+I will used this data set to test out the XGBoost classifier. Information on the dataset is as follows (taken from the original [Kaggle](https://www.kaggle.com/vinesmsuic/star-categorization-giants-and-dwarfs) entry):
 
-Stellar Classification uses the spectral data of stars to categorize them into different categories.
+"Stellar Classification uses the spectral data of stars to categorize them into different categories.
         
 * The modern stellar classification system is known as the Morgan–Keenan (MK) classification system. It uses the old HR classification system to categorize
 stars with their chromaticity and uses Roman numerals to categorize the star’s size.
 
-* In this Dataset, we will be using Absolute Magnitude and B-V Color Index to identify Giants and Dwarfs (`TargetClass`).
+* In this Dataset, we will be using Absolute Magnitude and B-V Color Index to identify Giants and Dwarfs (`TargetClass`)."
 
 Stars will be classified based on their `TargetClass` as being either:
 - Star is a Dwarf (0)
