@@ -30,18 +30,14 @@ Processed and balanced data obtained from [Kaggle](https://www.kaggle.com/vinesm
 
 I will used this data set to test out the XGBoost classifier. Information on the dataset is as follows:
 
-        Stellar Classification uses the spectral data of stars to categorize them 
-        into different categories.
+Stellar Classification uses the spectral data of stars to categorize them into different categories.
         
-        The modern stellar classification system is known as the Morgan–Keenan (MK)
-        classification system. It uses the old HR classification system to categorize
-        stars with their chromaticity and uses Roman numerals to categorize the star’s
-        size.
-        
-        In this Dataset, we will be using Absolute Magnitude and B-V Color Index to
-        Identify Giants and Dwarfs (`TargetClass`).
+* The modern stellar classification system is known as the Morgan–Keenan (MK) classification system. It uses the old HR classification system to categorize
+stars with their chromaticity and uses Roman numerals to categorize the star’s size.
 
-Classifying stars based on their `TargetClass` as being either:
+* In this Dataset, we will be using Absolute Magnitude and B-V Color Index to identify Giants and Dwarfs (`TargetClass`).
+
+Stars will be classified based on their `TargetClass` as being either:
 - Star is a Dwarf (0)
 - Star is a Giant (1)
 
@@ -65,7 +61,6 @@ from sklearn.compose import ColumnTransformer
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.dummy import DummyClassifier
 from sklearn.metrics import mean_absolute_error
-from sklearn.metrics import confusion_matrix
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import roc_curve
 
