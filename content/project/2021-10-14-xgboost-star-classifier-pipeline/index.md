@@ -28,7 +28,7 @@ projects: []
 
 Processed and balanced data obtained from [Kaggle](https://www.kaggle.com/vinesmsuic/star-categorization-giants-and-dwarfs)
 
-I will used this data set to test out the XGBoost classifier. Information on the dataset is as follows (taken from the original [Kaggle](https://www.kaggle.com/vinesmsuic/star-categorization-giants-and-dwarfs) entry):
+I will use this data set to test out the XGBoost classifier. Information on the dataset is as follows (taken from the original [Kaggle](https://www.kaggle.com/vinesmsuic/star-categorization-giants-and-dwarfs) entry):
 
 "Stellar Classification uses the spectral data of stars to categorize them into different categories.
         
