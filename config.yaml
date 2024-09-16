@@ -6,7 +6,7 @@ theme: "starter-hugo-academic"
 
 title: AB # Website name
 baseurl: 'https://abraae.netlify.app/' # Website URL
-copyright: '© 2021 Anne Braae' # Footer text, e.g. '© {year} Me'
+copyright: '© 2024 Anne Braae' # Footer text, e.g. '© {year} Me'
 
 ############################
 ## LANGUAGE
